@@ -47,7 +47,7 @@ def viewScores():
     for i in Score.query.all():
         if i.name not in all_names:
             all_scores.append(i.score)
-            all_objects.append(i)
+            all_objects.append(c)
             all_names.append(i.name)
         else:
             for c in all_objects:
