@@ -5,9 +5,7 @@ from flask_cors import CORS, cross_origin
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb" \
-                                        "92e5655d863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com" \
-                                        ":5432/d3hk4ichdip6ol"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
@@ -41,12 +39,11 @@ def saveScore():
 @app.route("/viewScores", methods=["GET"])
 def viewScores():
     all_scores = []
-    all_names = []
+
+    unique_scores = []
 
     for i in Score.query.all():
-        if i.name not in all_names:
-            all_scores.append(i.score)
-            all_names.append(i.name)
+        all_scores.append(i.score)
 
     top_ten_scores = sorted(all_scores)[-10:]
 
