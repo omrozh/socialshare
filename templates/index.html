@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yılan</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <link href="https://www.inadsglobal.com/styles" rel="stylesheet">
+</head>
+<body>
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: white; position: absolute; top: 50px; left: 20px" id="point_counter"></h1>
+    <div style="width: 800px; height: 600px; position: absolute; z-index: -1; left: 200px; border-radius: 5%; border: solid white 3px" id="mainContainer" class="container">
+        <div class="player"></div>
+        <img class="food" id="food" src="apple.png">
+        <input type="text" onkeydown="input_direction()" hidden>
+    </div>
+    <div class="leaderboard">
+        <input type="text" id="Name" class="mainForm" onchange="setNameNew()" style="width: 200px; height: 50px; position: absolute; top: 25px; left: 25px;" placeholder="Ad Girin">
+        <div style="position: absolute; top: 150px; left: 25px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white;" class="textBoxLead"></div>
+    </div>
+    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 150px; left: 20px; height: 40px;" onclick="setDif(1, this)" value="Easy">
+    <br><br>
+    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 200px; left: 20px; height: 40px; background-color: #4CAF50; color: white;" onclick="setDif(3, this)" value="Medium">
+    <br><br>
+    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 250px; left: 20px; height: 40px;" onclick="setDif(4, this)" value="Hard">
+    <br><br>
+    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 300px; left: 20px; height: 40px;" onclick="setDif(5, this)" value="Extreme">
+    <h1 style="font-family: Arial, Helvetica, sans-serif; color: white; position: absolute; top: 300px; left: 520px; visibility: hidden;" id="game_over_text">Game Over</h1>
+</body>
+</html>
