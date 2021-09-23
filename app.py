@@ -5,7 +5,9 @@ from flask_cors import CORS, cross_origin
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb" \
+                                        "92e5655d863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com" \
+                                        ":5432/d3hk4ichdip6ol"
 
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
