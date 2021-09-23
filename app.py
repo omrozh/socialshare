@@ -42,10 +42,17 @@ def saveScore():
 def viewScores():
     all_scores = []
 
-    unique_scores = []
+    all_names = []
 
     for i in Score.query.all():
-        all_scores.append(i.score)
+        if i.name not in all_names:
+            all_scores.append(i.score)
+            all_names.append(i.name)
+        else:
+            for c in all_scores:
+                if c.name == i.name and i.score > c.score:
+                    all_scores.remove(c)
+                    all_scores.append(i)
 
     top_ten_scores = sorted(all_scores)[-10:]
 
