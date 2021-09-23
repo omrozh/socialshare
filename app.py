@@ -5,9 +5,9 @@ from flask_cors import CORS, cross_origin
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb" \
-                                        "92e5655d863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com" \
-                                        ":5432/d3hk4ichdip6ol"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb92e5655" \
+                                        "d863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d" \
+                                        "3hk4ichdip6ol"
 
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
@@ -29,6 +29,8 @@ def saveScore():
             new_score = Score(name=values["name"], score=int(values["score"]) * 3, category=values["category"])
         elif values["category"] == "extreme":
             new_score = Score(name=values["name"], score=int(values["score"]) * 5, category=values["category"])
+        elif values["category"] == "no space - extreme":
+            new_score = Score(name=values["name"], score=int(values["score"]) * 7, category=values["category"])
         else:
             new_score = Score(name=values["name"], score=int(values["score"]), category=values["category"])
         db.session.add(new_score)

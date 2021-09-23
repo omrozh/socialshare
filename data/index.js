@@ -2,6 +2,9 @@
 var difficulty = 3;
 var send_dif = 3;
 
+var apple_index = 0;
+var space_index = 0;
+
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
         document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
@@ -65,8 +68,12 @@ function main(){
             1: "easy",
             3: "medium",
             4: "hard",
-            5: "extreme"
-        }
+            5: "extreme",
+            6: "no space - extreme"
+            }
+            if(space_index == 0 && send_dif == 5){
+                send_dif = 6;
+            }
             xhr.send("name=" + document.getElementById("Name").value + "&score=" + point + "&category=" + dict_levels[send_dif])
 
         document.getElementById("game_over_text").style.visibility = "visible";
@@ -123,6 +130,10 @@ function main(){
             current_direction = 3;
         }
         else if(e.code == "KeyE"){
+            apple_index += 1;
+            if(apple_index > 50){
+                point = 0;
+            }
             spawn_food();
         }
         else if(e.code == "Enter"){
@@ -130,6 +141,7 @@ function main(){
         }
         else if(e.code == "Space"){
             if(current_direction != 4){
+                space_index += 1;
                 prev_direction = current_direction;
                 current_direction = 4;
             }
