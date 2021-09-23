@@ -46,14 +46,16 @@ def viewScores():
 
     for i in Score.query.all():
         if i.name not in all_names:
-            all_scores.append(i.score)
-            all_objects.append(c)
+            all_objects.append(i)
             all_names.append(i.name)
         else:
             for c in all_objects:
                 if c.name == i.name and i.score > c.score:
-                    all_scores.remove(c.score)
-                    all_scores.append(i.score)
+                    all_objects.remove(c)
+                    all_objects.append(i)
+
+    for i in all_objects:
+        all_scores.append(i.score)
 
     top_ten_scores = sorted(all_scores)[-10:]
 
