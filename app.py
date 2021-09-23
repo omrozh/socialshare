@@ -41,18 +41,19 @@ def saveScore():
 @app.route("/viewScores", methods=["GET"])
 def viewScores():
     all_scores = []
-
+    all_objects = []
     all_names = []
 
     for i in Score.query.all():
         if i.name not in all_names:
             all_scores.append(i.score)
+            all_objects.append(i)
             all_names.append(i.name)
         else:
-            for c in all_scores:
+            for c in all_objects:
                 if c.name == i.name and i.score > c.score:
-                    all_scores.remove(c)
-                    all_scores.append(i)
+                    all_scores.remove(c.score)
+                    all_scores.append(i.score)
 
     top_ten_scores = sorted(all_scores)[-10:]
 
