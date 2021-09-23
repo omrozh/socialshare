@@ -59,7 +59,7 @@ def viewScores():
 
     top_ten_scores = sorted(all_scores)[-10:]
 
-    final_top_ten = Score.query.order_by("-score")
+    final_top_ten = Score.query.order_by("-score").limit(10)
 
     final_top_ten.reverse()
     final_dict_list = []
