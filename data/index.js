@@ -47,6 +47,7 @@ function mobileUse(){
 
 function main(){
     getLeaderBoard()
+    mobileUse()
     if(localStorage.getItem("lastDif")){
         difficulty = parseInt(localStorage.getItem("lastDif"));
     }
