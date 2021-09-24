@@ -40,7 +40,7 @@ function getLeaderBoard(){
 }
 
 function mobileUse(){
-    if(window.innerWidth < 1200){
+    if(window.innerWidth < 1400){
         document.getElementsByClassName("leaderboard")[0].hidden = true;
     }
 }
