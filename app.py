@@ -38,6 +38,17 @@ def saveScore():
         return "Completed"
 
 
+@app.route("/viewPlayers")
+def viewPlayers():
+    unique_players = []
+
+    for i in Score.query.all():
+        if i.name not in unique_players:
+            unique_players.append(i.name)
+
+    return flask.render_template("players.html", unique_players=unique_players)
+
+
 @app.route("/viewScores", methods=["GET"])
 def viewScores():
     all_scores = []
