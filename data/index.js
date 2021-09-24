@@ -39,6 +39,12 @@ function getLeaderBoard(){
     });
 }
 
+function mobileUse(){
+    if(window.innerWidth < 1200){
+        document.getElementsByClassName("leaderboard")[0].hidden = true;
+    }
+}
+
 function main(){
     getLeaderBoard()
     if(localStorage.getItem("lastDif")){
