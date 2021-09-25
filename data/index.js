@@ -129,6 +129,8 @@ function main(){
         food.style.top = y_cor + 100 + "px";
 
     }
+
+    document.getElementById("food").addEventListener("ontouchstart", spawn_food)
     
 
     function input_direction(e) {
@@ -175,7 +177,7 @@ function main(){
       clientY = e.touches[0].clientY;
 
       if(clientX < 200){
-        return
+            return;
       }
 
       if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
