@@ -183,11 +183,11 @@ function main(){
       if(clientX < 200){
             return;
       }
-
-      if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / 3) && clientY < window.innerHeight / 2 + (window.innerHeight / 3)){
+      var boundaryIndex = 5;
+      if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / boundaryIndex) && clientY < window.innerHeight / 2 + (window.innerHeight / boundaryIndex)){
             current_direction = 0;
       }
-      else if(clientX < window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / 3) && clientY < window.innerHeight / 2 + (window.innerHeight / 3)){
+      else if(clientX < window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / boundaryIndex) && clientY < window.innerHeight / 2 + (window.innerHeight / boundaryIndex)){
             current_direction = 2;
       }else if(clientY < window.innerHeight / 2){
             current_direction = 3;
