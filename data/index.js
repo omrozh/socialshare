@@ -130,7 +130,10 @@ function main(){
 
     }
 
-    document.getElementById("food").addEventListener("touchstart", spawn_food)
+    document.getElementById("food").addEventListener("touchstart", function(){
+        spawn_food()
+        current_direction = 4;
+    })
     
 
     function input_direction(e) {
