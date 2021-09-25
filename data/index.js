@@ -49,8 +49,8 @@ function mobileUse(){
 
         document.getElementsByClassName("leaderboard")[0].hidden = true;
 
-        document.getElementById("mainContainer").style.height = "400px";
-        document.getElementById("mainContainer").style.top = "100px";
+        document.getElementById("mainContainer").style.height = "450px";
+        document.getElementById("mainContainer").style.top = "50px";
         document.getElementById("mainContainer").style.width = "800px";
     }
 }
