@@ -52,6 +52,9 @@ function mobileUse(){
         document.getElementById("mainContainer").style.height = "450px";
         document.getElementById("mainContainer").style.top = "50px";
         document.getElementById("mainContainer").style.width = "800px";
+
+        document.getElementById("Name").value = "Mobile User Guest";
+
     }
 }
 
