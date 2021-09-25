@@ -174,6 +174,10 @@ function main(){
       clientX = e.touches[0].clientX;
       clientY = e.touches[0].clientY;
 
+      if(clientX < 200){
+        return
+      }
+
       if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
             current_direction = 0;
       }
