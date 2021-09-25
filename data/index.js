@@ -51,6 +51,8 @@ function mobileUse(){
 
         document.getElementById("mainContainer").style.height = "500px";
         document.getElementById("mainContainer").style.width = "800px";
+    }else{
+        document.getElementById("mobileControls").style.display = "none"
     }
 }
 
