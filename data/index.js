@@ -51,8 +51,6 @@ function mobileUse(){
 
         document.getElementById("mainContainer").style.height = "500px";
         document.getElementById("mainContainer").style.width = "800px";
-    }else{
-        document.getElementById("mobileControls").style.display = "none"
     }
 }
 
@@ -172,6 +170,22 @@ function main(){
     }
     document.addEventListener('keydown', input_direction);
 
+    document.addEventListener('touchstart', function(e) {
+      clientX = e.touches[0].clientX;
+      clientY = e.touches[0].clientY;
+
+      if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
+            current_direction = 0;
+      }
+      else if(clientX < window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
+            current_direction = 2;
+      }else if(clientY < window.innerHeight / 2){
+            current_direction = 3;
+      }else if(clientY > window.innerHeight / 2){
+            current_direction = 1;
+      }
+    }, false);
+
     function update_pos(player_index, x_pos, y_pos, player){
         if(current_direction == 0){
             player[player_index].style.left = x_pos - (5 * player_index) + "px";
@@ -219,4 +233,11 @@ function main(){
 
 window.addEventListener('DOMContentLoaded', (event) => {
     main();
+});
+
+window.addEventListener("load",function() {
+    setTimeout(function(){
+        // This hides the address bar:
+        window.scrollTo(0, 1);
+    }, 0);
 });
