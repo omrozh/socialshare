@@ -184,10 +184,10 @@ function main(){
             return;
       }
 
-      if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
+      if(clientX > window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / 3) && clientY < window.innerHeight / 2 + (window.innerHeight / 3)){
             current_direction = 0;
       }
-      else if(clientX < window.innerWidth / 2 && clientY > window.innerHeight / 2 - 50 && clientY < window.innerHeight / 2 + 50){
+      else if(clientX < window.innerWidth / 2 && clientY > window.innerHeight / 2 - (window.innerHeight / 3) && clientY < window.innerHeight / 2 + (window.innerHeight / 3)){
             current_direction = 2;
       }else if(clientY < window.innerHeight / 2){
             current_direction = 3;
