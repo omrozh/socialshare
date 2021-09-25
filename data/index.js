@@ -5,6 +5,8 @@ var send_dif = 3;
 var apple_index = 0;
 var space_index = 0;
 
+var current_direction = 4;
+
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
         document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
@@ -28,6 +30,7 @@ function setNameNew(){
     localStorage.setItem("playerName", document.getElementById("Name").value)
 }
 
+
 function getLeaderBoard(){
     setName()
     fetch('/viewScores').then(function (response) {
@@ -41,7 +44,13 @@ function getLeaderBoard(){
 
 function mobileUse(){
     if(window.innerWidth < 1400){
+        document.getElementsByClassName("player")[0].style.left = "10%";
+        document.getElementsByClassName("player")[0].style.top = "10%";
+
         document.getElementsByClassName("leaderboard")[0].hidden = true;
+
+        document.getElementById("mainContainer").style.height = "500px";
+        document.getElementById("mainContainer").style.width = "800px";
     }
 }
 
@@ -54,7 +63,6 @@ function main(){
     var player = document.getElementsByClassName("player");
     var x_pos = 288;
     var y_pos = 195;
-    var current_direction = 4;
     var prev_direction = 0;
     var food = document.getElementById("food");
     var point = 1;

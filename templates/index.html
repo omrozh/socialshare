@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Snake</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="/index.css">
+    <script src="/index.js"></script>
     <link href="https://www.inadsglobal.com/styles" rel="stylesheet">
 </head>
 <body>
@@ -20,13 +21,21 @@
         <input type="text" id="Name" class="mainForm" onchange="setNameNew()" style="width: 200px; height: 50px; position: absolute; top: 25px; left: 25px;" placeholder="Ad Girin">
         <div style="position: absolute; top: 150px; left: 25px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: white;" class="textBoxLead"></div>
     </div>
-    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 150px; left: 20px; height: 40px;" onclick="setDif(1, this)" value="Easy">
+    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 150px; left: 20px; height: 40px; -webkit-appearance: none;" onclick="setDif(1, this)" value="Easy">
     <br><br>
-    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 200px; left: 20px; height: 40px; background-color: #4CAF50; color: white;" onclick="setDif(3, this)" value="Medium">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 100px; position: absolute; top: 200px; left: 20px; height: 40px; background-color: #4CAF50; color: white;" onclick="setDif(3, this)" value="Medium">
     <br><br>
-    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 250px; left: 20px; height: 40px;" onclick="setDif(4, this)" value="Hard">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 100px; position: absolute; top: 250px; left: 20px; height: 40px;" onclick="setDif(4, this)" value="Hard">
     <br><br>
-    <input type="button" class="mainFormBig" style="width: 100px; position: absolute; top: 300px; left: 20px; height: 40px;" onclick="setDif(5, this)" value="Extreme">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 100px; position: absolute; top: 300px; left: 20px; height: 40px;" onclick="setDif(5, this)" value="Extreme">
+
+    <br>
+    <br>
+    <br>
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 100px; position: absolute; top: 400px; left: 20px; height: 30px;" value="&#x2191;" onclick="current_direction = 3">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 100px; position: absolute; top: 440px; left: 20px; height: 30px;" value="&#x2193" onclick="current_direction = 1">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 70px; position: absolute; top: 480px; left: 80px; height: 30px;" value="&#x2192;" onclick="current_direction = 0">
+    <input type="button" class="mainFormBig" style="-webkit-appearance: none;width: 70px; position: absolute; top: 480px; left: 0px; height: 30px;" value="&#x2190;" onclick="current_direction = 2">
     <h1 style="font-family: Arial, Helvetica, sans-serif; color: white; position: absolute; top: 300px; left: 520px; visibility: hidden;" id="game_over_text">Game Over</h1>
 </body>
 </html>
