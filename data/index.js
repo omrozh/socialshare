@@ -2,10 +2,17 @@
 var difficulty = 3;
 var send_dif = 3;
 
+var party = false;
+
 var apple_index = 0;
 var space_index = 0;
 
 var current_direction = 4;
+
+var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mesaj at", "Yanındaki ile birlikte tiktok çek",
+"5 squad yap", "Telefonundaki en garip fotoyu göster", "Rehberindeki bir kişiye patlıcan emojisi gönder",
+"Ellerini kullanmadan muz ye", "Yanındakine 'dirty' bir şey söyle", "Aklına gelen ilk kelimeyi bağır",
+"Sınıfta göbek at", "Bu hafta en sevindiğin anını anlat", "En sevdiğin şarkıyı seslendir", "Bir sihir numarası yap"]
 
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
@@ -18,6 +25,18 @@ function setDif(index_dif, dif_button){
     if(send_dif == 3){
         send_dif = difficulty;
     }
+    dif_button.style.color = "white";
+}
+
+function setParty(dif_button){
+    party = true;
+    difficulty = 3;
+
+    for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
+        document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
+        document.getElementsByClassName("mainFormBig")[i].style.color = "gray";
+    }
+    dif_button.style.backgroundColor = "#4CAF50";
     dif_button.style.color = "white";
 }
 
@@ -79,6 +98,14 @@ function main(){
     spawn_food();
     function game_over(){
         end_game = true;
+
+        if(party && point < 30){
+            var rand = Math.random();
+            rand *= commands.length;
+            rand = Math.floor(rand);
+
+            alert(commands[rand])
+        }
 
         var xhr = new XMLHttpRequest();
         xhr.open("POST", '/saveScore', true)
@@ -225,6 +252,7 @@ function main(){
         if(end_game){
             return;
         }
+
         player = document.getElementsByClassName("player");
         
         document.getElementById("point_counter").innerHTML = "Point: " + point
