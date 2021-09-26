@@ -25,6 +25,8 @@ class Score(db.Model):
 def saveScore():
     if flask.request.method == "POST":
         values = flask.request.values
+        if int(values["score"]) > 150:
+            return "Cheat"
         if values["category"] == "hard":
             new_score = Score(name=values["name"], score=int(values["score"]) * 3, category=values["category"])
         elif values["category"] == "extreme":
