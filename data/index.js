@@ -132,6 +132,13 @@ function main(){
         food.style.left = x_cor + 100 + "px";
         food.style.top = y_cor + 100 + "px";
 
+        var fruit_index = Math.random();
+        if (fruit_index < 0.5)
+          fruit_index = 0
+        else
+          fruit_index= 1
+        food.src = "fruit" + fruit_index + ".png"
+
     }
 
     document.getElementById("food").addEventListener("touchstart", function(){
