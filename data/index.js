@@ -17,8 +17,7 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
 "Ailenden sakladığın bir sırrını söyle", "Hayatında hiç fal baktırdın mı? Evetse ne olduğunu söyle",
 "Yanındaki ne yapacağını söyleyecek", "Bize bir sıçış hikayeni anlat", "Bir fantezini söyle",
 "Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla", "Arama geçmişini göster",
- "En son internetten kimi stalkladın?", "Biri ile konuşmak istemediğinde en sık kullandığın bahane nedir?",
- "Burada bulunan en sevmediğin kişiyi yanındakine söyle",
+ "En son internetten kimi stalkladın?", "Biri ile konuşmak istemediğinde en sık kullandığın bahane nedir?",c
  "Bugün doğum günü olmayan bir arkadaşına doğum günün kutlu olsun mesajı at.",
  "Rastgele etraftan birine hiç komik olmayan bir espri yap", "Pizzacıyı arayıp hamburger siparişi ver"]
 
