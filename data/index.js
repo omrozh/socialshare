@@ -16,7 +16,7 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
 "Bize bir sırrını anlat", "5 şınav çek", "Burada bulunan biri ile hafta içi bir yere git",
 "Ailenden sakladığın bir sırrını söyle", "Hayatında hiç fal baktırdın mı? Evetse ne olduğunu söyle",
 "Yanındaki ne yapacağını söyleyecek", "Bize bir sıçış hikayeni anlat", "Bir fantezini söyle",
-"Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla", "Yanındaki ile bir dakika el ele tutuş"]
+"Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla", "Arama geçmişini göster"]
 
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
