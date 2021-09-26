@@ -10,9 +10,13 @@ var space_index = 0;
 var current_direction = 4;
 
 var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mesaj at", "Yanındaki ile birlikte tiktok çek",
-"5 squad yap", "Telefonundaki en garip fotoyu göster", "Rehberindeki bir kişiye patlıcan emojisi gönder",
+"5 squat yap", "Telefonundaki en garip fotoyu göster", "Rehberindeki bir kişiye patlıcan emojisi gönder",
 "Ellerini kullanmadan muz ye", "Yanındakine 'dirty' bir şey söyle", "Aklına gelen ilk kelimeyi bağır",
-"Sınıfta göbek at", "Bu hafta en sevindiğin anını anlat", "En sevdiğin şarkıyı seslendir", "Bir sihir numarası yap"]
+"Sınıfta göbek at", "Bu hafta en sevindiğin anını anlat", "En sevdiğin şarkıyı seslendir", "Bir sihir numarası yap",
+"Bize bir sırrını anlat", "5 şınav çek", "Burada bulunan biri ile hafta içi bir yere git",
+"Ailenden sakladığın bir sırrını söyle", "Hayatında hiç fal baktırdın mı? Evetse ne olduğunu söyle",
+"Yanındaki ne yapacağını söyleyecek", "Bize bir sıçış hikayeni anlat", "Bir fantezini söyle",
+"Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla"]
 
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
