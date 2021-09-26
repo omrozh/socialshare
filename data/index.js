@@ -104,9 +104,7 @@ function main(){
         end_game = true;
 
         if(party && point < 30){
-            var rand = Math.random();
-            rand *= commands.length;
-            rand = Math.floor(rand);
+            var rand = Date.now() % (commands.length + 1)
 
             alert(commands[rand])
         }
