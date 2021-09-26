@@ -16,7 +16,11 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
 "Bize bir sırrını anlat", "5 şınav çek", "Burada bulunan biri ile hafta içi bir yere git",
 "Ailenden sakladığın bir sırrını söyle", "Hayatında hiç fal baktırdın mı? Evetse ne olduğunu söyle",
 "Yanındaki ne yapacağını söyleyecek", "Bize bir sıçış hikayeni anlat", "Bir fantezini söyle",
-"Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla", "Arama geçmişini göster"]
+"Bugüne kadar kaç sevgilin oldu?", "Yanındakini gıdıkla", "Arama geçmişini göster",
+ "En son internetten kimi stalkladın?", "Biri ile konuşmak istemediğinde en sık kullandığın bahane nedir?",
+ "Eğer şu anda burada bulunan bir kişinin ölümüne karar verecek olsan kimi seçerdin?",
+ "Bugün doğum günü olmayan bir arkadaşına doğum günün kutlu olsun mesajı at.",
+ "Rastgele etraftan birine hiç komik olmayan bir espri yap", "Pizzacıyı arayıp hamburger siparişi ver"]
 
 function setDif(index_dif, dif_button){
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
@@ -104,7 +108,7 @@ function main(){
         end_game = true;
 
         if(party && point < 30){
-            var rand = Date.now() % (commands.length + 1)
+            var rand = Date.now() % (commands.length)
 
             alert(commands[rand])
         }
