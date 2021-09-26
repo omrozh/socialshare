@@ -8,7 +8,7 @@
 }
 
 .player{
-    background: linear-gradient(180deg, rgb(0, 200, 250), rgb(0, 250, 200));
+    background-color: #e09f3e;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -26,7 +26,7 @@
 }
 
 body{
-    background-color: #2e3047;
+    background: url("/background.jpg");
     touch-action: manipulation;
 }
 
