@@ -11,7 +11,6 @@ var current_direction = 4;
 
 window.oncontextmenu = function ()
 {
-    alert("Context menu is no longer allowed you are permanently banned from entering the leaderboard please email contact@inadsglobal.com if you believe there is a mistake.")
     xhr.open("POST", '/saveScore', true)
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
