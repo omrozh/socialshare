@@ -255,6 +255,10 @@ function main(){
             player[player_index].style.left = x_pos + "px";
             player[player_index].style.top = y_pos + (5 * player_index) + "px";
         }
+        else{
+            player[player_index].style.left = x_pos + "px";
+            player[player_index].style.top = y_pos + (5 * player_index) + "px";
+        }
 
     }
 
