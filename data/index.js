@@ -15,8 +15,6 @@ window.oncontextmenu = function ()
     xhr.open("POST", '/saveScore', true)
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    xhr.setRequestHeader("Requested With", "Infinity Corp")
-
     if(space_index == 0 && send_dif == 5){
         send_dif = 6;
     }
