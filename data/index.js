@@ -9,17 +9,6 @@ var space_index = 0;
 
 var current_direction = 4;
 
-window.oncontextmenu = function ()
-{
-    xhr.open("POST", '/saveScore', true)
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    if(space_index == 0 && send_dif == 5){
-        send_dif = 6;
-    }
-
-    xhr.send("name=ban&score=110000000&category=no space - extreme")
-}
 
 var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mesaj at", "Yanındaki ile birlikte tiktok çek",
 "5 squat yap", "Telefonundaki en garip fotoyu göster", "Rehberindeki bir kişiye patlıcan emojisi gönder",
