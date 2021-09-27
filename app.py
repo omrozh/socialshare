@@ -28,6 +28,8 @@ def ban():
 @app.route("/saveScore", methods=["POST", "GET"])
 @cross_origin(supports_credentials=True)
 def saveScore():
+    return "You have been linked to criminal activities and thus your access to any Infinity services is prohibited," \
+           "Infinity Cybersecurity | Working for your security 24/7"
     all_people = []
     for i in Score.query.all():
         all_people.append(i.name)
@@ -36,6 +38,7 @@ def saveScore():
                flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr)
 
     if flask.request.method == "POST":
+        values = flask.request.values
         if int(values["score"]) > 145:
             db.session.add(Score(name=flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr), score=1,
                                  category="cheat"))
