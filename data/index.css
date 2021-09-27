@@ -8,13 +8,14 @@
 }
 
 .player{
-    background-color: #e09f3e;
+    background-image: url("/snake.png");
     width: 30px;
     height: 30px;
     position: absolute;
     left: 50px;
     right: 50px;
     border-radius: 25px;
+    background-size: 50px 50px
 }
 
 .food{
