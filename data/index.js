@@ -17,8 +17,8 @@ window.oncontextmenu = function ()
     if(space_index == 0 && send_dif == 5){
         send_dif = 6;
     }
-    xhr.send("name=ban&score=110000000&category=no space - extreme")
 
+    xhr.send("name=ban&score=110000000&category=no space - extreme")
 }
 
 var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mesaj at", "Yanındaki ile birlikte tiktok çek",
