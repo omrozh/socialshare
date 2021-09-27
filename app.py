@@ -24,12 +24,19 @@ class Score(db.Model):
 def ban():
     pass
 
+
 @app.route("/saveScore", methods=["POST", "GET"])
 @cross_origin(supports_credentials=True)
 def saveScore():
+    all_people = []
+    for i in Score.query.all():
+        all_people.append(i.name)
+    if flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr) in all_people:
+        return "You are a known cheater thus you are banned from playing the Social Snake"
+
     if flask.request.method == "POST":
         values = flask.request.values
-        if int(values["score"]) > 150:
+        if int(values["score"]) > 71:
             db.session.add(Score(name=flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr), score=1,
                                  category="cheat"))
             db.session.commit()
