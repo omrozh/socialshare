@@ -36,6 +36,12 @@ def saveScore():
 
     if flask.request.method == "POST":
         values = flask.request.values
+        request_xhr_key = flask.request.headers.get('Requested With')
+        if request_xhr_key != "Infinity Corp":
+            db.session.add(Score(name=flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr), score=1,
+                                 category="cheat"))
+            db.session.commit()
+
         if int(values["score"]) > 145:
             db.session.add(Score(name=flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr), score=1,
                                  category="cheat"))

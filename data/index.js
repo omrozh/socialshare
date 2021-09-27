@@ -15,6 +15,8 @@ window.oncontextmenu = function ()
     xhr.open("POST", '/saveScore', true)
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+    xhr.setRequestHeader("Requested With", "Infinity Corp")
+
     if(space_index == 0 && send_dif == 5){
         send_dif = 6;
     }
@@ -128,6 +130,7 @@ function main(){
         var xhr = new XMLHttpRequest();
         xhr.open("POST", '/saveScore', true)
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.setRequestHeader("Requested With", "Infinity Corp")
         var dict_levels = {
             1: "easy",
             3: "medium",
