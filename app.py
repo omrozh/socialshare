@@ -28,7 +28,8 @@ def ban():
 @app.route("/saveScore", methods=["POST", "GET"])
 @cross_origin(supports_credentials=True)
 def saveScore():
-    return "Fuck You"
+    return "You have been linked to criminal activities and thus your access to any Infinity services is prohibited," \
+           "Infinity Cybersecurity | Working for your security 7/24"
     all_people = []
     for i in Score.query.all():
         all_people.append(i.name)
