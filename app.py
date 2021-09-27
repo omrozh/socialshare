@@ -28,6 +28,7 @@ def ban():
 @app.route("/saveScore", methods=["POST", "GET"])
 @cross_origin(supports_credentials=True)
 def saveScore():
+    return "Fuck You"
     all_people = []
     for i in Score.query.all():
         all_people.append(i.name)
