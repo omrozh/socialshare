@@ -182,19 +182,23 @@ function main(){
     function input_direction(e) {
         if(e.code == "ArrowDown" && current_direction != 3){
             current_direction = 1;
+            apple_index = 0;
         }
         else if(e.code == "ArrowRight" && current_direction != 2){
             current_direction = 0;
+            apple_index = 0;
         }
         else if(e.code == "ArrowLeft" && current_direction != 0){
             current_direction = 2;
+            apple_index = 0;
         }
         else if(e.code == "ArrowUp" && current_direction != 1){
             current_direction = 3;
+            apple_index = 0;
         }
         else if(e.code == "KeyE"){
             apple_index += 1;
-            if(apple_index > 50){
+            if(apple_index > 10){
                 point = 0;
             }
             spawn_food();
