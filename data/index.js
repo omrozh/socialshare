@@ -1,6 +1,6 @@
 
 var difficulty = 6;
-var send_dif = 3;
+var send_dif = 6;
 
 var party = false;
 
