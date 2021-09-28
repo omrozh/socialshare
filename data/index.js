@@ -22,10 +22,14 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
  "Rastgele etraftan birine hiç komik olmayan bir espri yap", "Pizzacıyı arayıp hamburger siparişi ver"]
 
 function setDif(index_dif, dif_button){
+    if(index_dif == 1){
+        return "Unauthorized"
+    }
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
         document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
         document.getElementsByClassName("mainFormBig")[i].style.color = "gray";
     }
+
     difficulty = index_dif;
     localStorage.setItem("lastDif", index_dif)
     dif_button.style.backgroundColor = "#4CAF50";
@@ -55,7 +59,6 @@ function setName(){
 function setNameNew(){
     localStorage.setItem("playerName", document.getElementById("Name").value)
 }
-
 
 function getLeaderBoard(){
     setName()
