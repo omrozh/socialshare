@@ -36,7 +36,7 @@ def saveScore():
 
     if flask.request.method == "POST":
         values = flask.request.values
-        if int(values["score"]) > 250:
+        if int(values["score"]) > 150:
             db.session.add(Score(name=flask.request.environ.get('HTTP_X_REAL_IP', flask.request.remote_addr), score=1,
                                  category="cheat"))
             db.session.commit()
