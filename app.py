@@ -26,7 +26,6 @@ def ban():
 
 
 @app.route("/saveScore", methods=["POST", "GET"])
-@cross_origin(supports_credentials=True)
 def saveScore():
     all_people = []
     for i in Score.query.all():
