@@ -1,5 +1,5 @@
 
-var difficulty = 3;
+var difficulty = 6;
 var send_dif = 3;
 
 var party = false;
@@ -22,7 +22,7 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
  "Rastgele etraftan birine hiç komik olmayan bir espri yap", "Pizzacıyı arayıp hamburger siparişi ver"]
 
 function setDif(index_dif, dif_button){
-    if(difficulty == 1 && index_dif == 6){
+    if(index_dif > difficulty){
         return "Unauthorized"
     }
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
