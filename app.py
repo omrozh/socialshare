@@ -28,6 +28,8 @@ def ban():
 @app.route("/saveScore", methods=["POST", "GET"])
 @cross_origin(supports_credentials=True)
 def saveScore():
+    if flask.request.url != "https://www.socialsnake.ml" or flask.request.url != "http://www.socialsnake.ml":
+        return "Request Invalid"
     all_people = []
     for i in Score.query.all():
         all_people.append(i.name)
