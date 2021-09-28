@@ -91,7 +91,7 @@ function main(){
     getLeaderBoard()
     mobileUse()
     if(localStorage.getItem("lastDif")){
-        difficulty = parseInt(localStorage.getItem("lastDif"));
+        difficulty = 6;
     }
     var player = document.getElementsByClassName("player");
     var x_pos = 288;
