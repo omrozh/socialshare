@@ -22,7 +22,7 @@ var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mes
  "Rastgele etraftan birine hiç komik olmayan bir espri yap", "Pizzacıyı arayıp hamburger siparişi ver"]
 
 function setDif(index_dif, dif_button){
-    if(index_dif == 1){
+    if(difficulty == 1 && index_dif == 6){
         return "Unauthorized"
     }
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
