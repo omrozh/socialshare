@@ -27,7 +27,6 @@ def ban():
 
 @app.route("/saveScore", methods=["POST", "GET"])
 def saveScore():
-    return "Fuck You"
     all_people = []
     for i in Score.query.all():
         all_people.append(i.name)
