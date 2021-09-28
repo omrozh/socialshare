@@ -247,20 +247,20 @@ function main(){
 
     function update_pos(player_index, x_pos, y_pos, player){
         if(current_direction == 0){
-            player[player_index].style.left = x_pos + (5 * player_index) + "px";
+            player[player_index].style.left = x_pos + (2.5 * player_index) + "px";
             player[player_index].style.top = y_pos + "px";
         }
         else if(current_direction == 2){
-            player[player_index].style.left = x_pos - (5 * player_index) + "px";
+            player[player_index].style.left = x_pos - (2.5 * player_index) + "px";
             player[player_index].style.top = y_pos + "px";
         }
         else if(current_direction == 3){
             player[player_index].style.left = x_pos + "px";
-            player[player_index].style.top = y_pos - (5 * player_index) + "px";
+            player[player_index].style.top = y_pos - (2.5 * player_index) + "px";
         }
         else if(current_direction == 1){
             player[player_index].style.left = x_pos + "px";
-            player[player_index].style.top = y_pos + (5 * player_index) + "px";
+            player[player_index].style.top = y_pos + (2.5 * player_index) + "px";
         }
         else{
             player[player_index].style.left = x_pos + "px";
