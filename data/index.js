@@ -271,16 +271,16 @@ function main(){
         
         document.getElementById("point_counter").innerHTML = "Point: " + point
         if(current_direction == 0){
-            x_pos += point / 10 + difficulty;
+            x_pos += point / 7 + difficulty;
         }
         if(current_direction == 1){
-            y_pos += point / 10 + difficulty;
+            y_pos += point / 7 + difficulty;
         }
         if(current_direction == 2){
-            x_pos -= point / 10 + difficulty;
+            x_pos -= point / 7 + difficulty;
         }
         if(current_direction == 3){
-            y_pos -= point / 10 + difficulty;
+            y_pos -= point / 7 + difficulty;
         }
 
         for(i = 0; i < player.length; i++){
