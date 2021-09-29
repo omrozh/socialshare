@@ -122,11 +122,11 @@ function main(){
             1: "easy",
             3: "medium",
             4: "hard",
-            5: "extreme",
-            6: "no space - extreme"
+            6: "extreme",
+            7: "no space - extreme"
             }
-            if(space_index == 0 && send_dif == 5){
-                send_dif = 6;
+            if(space_index == 0 && send_dif == 6){
+                send_dif = 7;
             }
             xhr.send("name=" + document.getElementById("Name").value + "&score=" + point + "&category=" + dict_levels[send_dif])
 
@@ -210,13 +210,10 @@ function main(){
             window.location.reload()
         }
         else if(e.code == "Space"){
+        space_index += 1;
             if(current_direction != 4){
-                space_index += 1;
                 prev_direction = current_direction;
                 current_direction = 4;
-            }
-            else if(current_direction == 5){
-                alert("Zorluk Seç")
             }
             else{
                 current_direction = prev_direction;
