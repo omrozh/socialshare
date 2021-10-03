@@ -85,7 +85,6 @@ def viewScores():
     top_ten_scores.reverse()
     final_top_ten = top_ten_scores
 
-    final_top_ten.reverse()
     final_dict_list = []
 
     for i in final_top_ten:
