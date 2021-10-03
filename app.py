@@ -81,12 +81,9 @@ def viewScores():
     for i in all_objects:
         all_scores.append(i.score)
 
-    top_ten_scores = sorted(all_scores)[-10:]
-
-    final_top_ten = []
-
-    for i in top_ten_scores:
-        final_top_ten.append(Score.query.filter_by(score=int(i))[-1])
+    top_ten_scores = Score.query.order_by(Score.score).limit(10).all()
+    top_ten_scores.reverse()
+    final_top_ten = top_ten_scores
 
     final_top_ten.reverse()
     final_dict_list = []
