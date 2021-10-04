@@ -145,7 +145,7 @@ function main(){
             6: "extreme",
             7: "no space - extreme"
             }
-            if(space_index == 0 && send_dif == 6){
+            if(space_index == 0 && send_dif == difficulty){
                 send_dif = 7;
             }
             xhr.send("name=" + document.getElementById("Name").value + "&score=" + point + "&category=" + dict_levels[send_dif])
