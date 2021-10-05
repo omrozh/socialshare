@@ -93,7 +93,12 @@ def viewScores():
 
 
 @app.route("/")
-def index():
+def home():
+    return flask.render_template("home.html")
+
+
+@app.route("/g=1")
+def snake_index():
     return flask.render_template("index.html")
 
 
