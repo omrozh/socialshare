@@ -44,8 +44,8 @@ function setParty(dif_button){
     difficulty = 3;
 
     for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
-        document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
-        document.getElementsByClassName("mainFormBig")[i].style.color = "gray";
+        document.getElementsByClassName("button-17")[i].style.backgroundColor = "white";
+        document.getElementsByClassName("button-17")[i].style.color = "gray";
     }
     dif_button.style.backgroundColor = "#4CAF50";
     dif_button.style.color = "white";
