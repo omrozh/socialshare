@@ -25,9 +25,9 @@ function setDif(index_dif, dif_button){
     if(index_dif > difficulty){
         return "Unauthorized"
     }
-    for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
-        document.getElementsByClassName("mainFormBig")[i].style.backgroundColor = "white";
-        document.getElementsByClassName("mainFormBig")[i].style.color = "gray";
+    for(i = 0; i < document.getElementsByClassName("button-17").length; i++){
+        document.getElementsByClassName("button-17")[i].style.backgroundColor = "white";
+        document.getElementsByClassName("button-17")[i].style.color = "gray";
     }
 
     difficulty = index_dif;
@@ -43,7 +43,7 @@ function setParty(dif_button){
     party = true;
     difficulty = 3;
 
-    for(i = 0; i < document.getElementsByClassName("mainFormBig").length; i++){
+    for(i = 0; i < document.getElementsByClassName("button-17").length; i++){
         document.getElementsByClassName("button-17")[i].style.backgroundColor = "white";
         document.getElementsByClassName("button-17")[i].style.color = "gray";
     }
