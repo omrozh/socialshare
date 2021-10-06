@@ -7,6 +7,10 @@
     <title>Home</title>
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/4246ac988c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script data-ad-client="ca-pub-9941092748078815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
     <style>
         body{
@@ -142,12 +146,101 @@
           }
         }
 
+        .button-17 {
+          align-items: center;
+          appearance: none;
+          background-color: #fff;
+          border-radius: 24px;
+          border-style: none;
+          box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+          box-sizing: border-box;
+          color: #3c4043;
+          cursor: pointer;
+          display: inline-flex;
+          fill: currentcolor;
+          font-family: "Google Sans",Roboto,Arial,sans-serif;
+          font-size: 14px;
+          font-weight: 500;
+          height: 48px;
+          justify-content: center;
+          letter-spacing: .25px;
+          line-height: normal;
+          max-width: 100%;
+          overflow: visible;
+          padding: 2px 24px;
+          position: relative;
+          text-align: center;
+          text-transform: none;
+          transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: auto;
+          will-change: transform,opacity;
+          z-index: 0;
+        }
 
+        .button-17:hover {
+          background: #F6F9FE;
+          color: #174ea6;
+        }
+
+        .button-17:active {
+          box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+          outline: none;
+        }
+
+        .button-17:focus {
+          outline: none;
+          border: 2px solid #4285f4;
+        }
+
+        .button-17:not(:disabled) {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):hover {
+          box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+        }
+
+        .button-17:not(:disabled):focus {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
+
+        .button-17:not(:disabled):active {
+          box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+        }
+
+        .button-17:disabled {
+          box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+        }
     </style>
 </head>
     <body style=" margin: 0;">
-
-
+    <div class="dropdown" style="position: absolute; top: 50px; left: 25px">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" style="background: none; border: none" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i style="color: white; font-size: 2rem;" class="fas fa-plus"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <div class="dropdown-item">
+            {% if logged_in %}
+                <form method="post" enctype="multipart/form-data">
+                    <input type="text" name="fav_url" style="width: 150px" placeholder="url" class="form-control">
+                    <br>
+                    <input type="submit" class="button-17">
+                </form>
+            {% else %}
+                <form method="post" enctype="multipart/form-data">
+                    <input type="text" name="username" style="width: 150px" placeholder="username" class="form-control">
+                    <br>
+                    <input type="password" name="password" style="width: 150px" placeholder="password" class="form-control">
+                    <br>
+                    <input type="submit" class="button-17">
+                </form>
+            {% endif %}
+        </div>
+      </div>
+    </div>
     <div style="margin-top: 10%">
         <i style="color: #bb1d24; font-size: 6rem; margin: auto; position: absolute; left: 0; right: 0; opacity: 0;" class="far fa-envelope"></i>
         <center>
@@ -160,6 +253,12 @@
                 <img style="width: 200px; margin-top: 10%" src="https://sosyalke.herokuapp.com/favicon.ico" alt="">
                 <p style="margin-left: 10px">Confidential</p>
             </button>
+            {% for i in urls %}
+                <button class="imageFrame" style="-webkit-appearance: none;" onclick="document.location = '{{ i }}'">
+                    <img style="width: 200px; margin-top: 10%" src="{{ i }}/favicon.ico" alt="">
+                    <p style="margin-left: 10px">Fav site</p>
+                </button>
+            {% endfor %}
         </center>
     </div>
     <div class="ripple-background" id="circles">
