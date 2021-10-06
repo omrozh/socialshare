@@ -240,7 +240,7 @@
         </div>
       </div>
     </div>
-    <div style="margin-top: 10%">
+    <div style="margin-top: 10%" id="mainDiv">
         <i style="color: #bb1d24; font-size: 6rem; margin: auto; position: absolute; left: 0; right: 0; opacity: 0;" class="far fa-envelope"></i>
         <center>
             <button class="imageFrame" onclick="document.location = '/g=1'">
@@ -264,11 +264,13 @@
             {% endfor %}
         </center>
     </div>
-    <br>
+    <div id="myModal" class="modal">
     </div>
+    <br>
     <script>
         var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
         if(is_mobile){
+            document.getElementById("mainDiv").style.marginTop = "40%"
             document.getElementById("circles").style.display = "none";
         }
 
