@@ -147,7 +147,7 @@ def snake_index():
 
 
 @app.route("/remove", methods=["POST"])
-def remove(item_url):
+def remove():
     if flask.request.method:
         current_user.urls.replace(flask.request.values["url"] + "*-*", "")
         db.session.commit()
