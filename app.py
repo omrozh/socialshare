@@ -146,6 +146,13 @@ def snake_index():
     return flask.render_template("index.html")
 
 
+@app.route("/remove/<item_url>")
+def remove(item_url):
+    current_user.urls.replace(item_url + "*-*", "")
+    db.session.commit()
+    return flask.redirect("/")
+
+
 @app.route("/<filename>")
 def appleReturn(filename):
     return flask.send_file("data/" + filename)

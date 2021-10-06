@@ -253,7 +253,9 @@
                 <p style="margin-left: 10px">Confidential</p>
             </button>
             {% for i in urls %}
+
                 <button class="imageFrame" style="-webkit-appearance: none;" onclick="document.location = '{{ i }}'">
+                    <a href="/remove/{{ i }}" style="position: absolute; text-decoration: none; margin-left: 190px">X</a>
                     <img style="margin-top: 10%; max-width: 200px" src="{{ i }}/favicon.ico" alt="">
                     {% if i != "" %}
                         <p style="margin-left: 10px">{{ i }}</p>
