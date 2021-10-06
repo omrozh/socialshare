@@ -136,11 +136,7 @@ def home():
 
                 login_user(user)
 
-                return '''
-                    <script>
-                        alert("Account created")
-                        window.location = "/"
-                '''
+                return flask.redirect("/")
     return flask.render_template("home.html", logged_in=current_user.is_authenticated, urls=urls)
 
 
