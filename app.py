@@ -128,6 +128,7 @@ def home():
                 user_query = User.query.filter_by(username=flask.request.values["username"]).first()
                 if flask.request.values["password"] == user_query.password:
                     login_user(user_query)
+                    return flask.redirect("/")
             else:
                 user = User(username=flask.request.values["username"],
                             password=flask.request.values["password"], apps="", urls="")
