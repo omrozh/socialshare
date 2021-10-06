@@ -172,7 +172,8 @@
 
     </div>
     <script>
-        if(window.innerWidth < window.innerHeight){
+        var is_mobile = !!navigator.userAgent.match(/iphone|android|blackberry/ig) || false;
+        if(is_mobile){
             document.getElementById("circles").style.display = "none";
         }
 
