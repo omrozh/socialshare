@@ -255,7 +255,8 @@
             {% for i in urls %}
                 {% if i != "" %}
                     <button class="imageFrame" style="-webkit-appearance: none;">
-                    <a onclick="removeURL('{{ i }}')" style="text-decoration: none; cursor: pointer; margin-top: -50px">X</a>
+                    <a onclick="removeURL('{{ i }}')" style="text-decoration: none; cursor: pointer;">X</a>
+                        <br>
                         <img style="margin-top: 10%; max-width: 200px" src="{{ i }}/favicon.ico" alt="">
                             <p onclick="document.location = '{{ i }}'" style="margin-left: 10px; cursor: pointer">{{ i }}</p>
                     </button>
