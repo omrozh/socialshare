@@ -255,8 +255,8 @@
             </button>
             {% for i in urls %}
                 <button class="imageFrame" style="-webkit-appearance: none;" onclick="document.location = '{{ i }}'">
-                    <iframe style="width: 200px; margin-top: 10%" src="{{ i }}" alt=""></iframe>
-                    <p style="margin-left: 10px">Fav site</p>
+                    <img style="width: 16px; margin-top: 10%" src="{{ i }}/favicon.ico" alt="">
+                    <p style="margin-left: 10px">{{ i }}</p>
                 </button>
             {% endfor %}
         </center>
