@@ -9,6 +9,9 @@
     <script src="https://kit.fontawesome.com/4246ac988c.js" crossorigin="anonymous"></script>
     <script data-ad-client="ca-pub-9941092748078815" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
     <style>
+        body{
+            text-align:center;
+        }
         .imageFrame{
             width: 250px;
             height: 300px;
@@ -59,15 +62,24 @@
         }
     </style>
 </head>
-<body style="background-color: #f0f2f5;">
-    <button class="imageFrame" style="position: absolute; top: 30%; bottom: 0; left: 25%; right: 0;" onclick="document.location = '/g=1'">
-        <img style="width: 200px; margin-top: 10%" src="https://socialsnake.ml/favicon.ico" alt="">
-        <p>Social Snake</p>
-    </button>
-    <button class="imageFrame" style="-webkit-appearance: none; position: absolute; top: 30%; bottom: 0; left: 58%; right: 0;" id="myBtn">
-        <img style="width: 200px; margin-top: 10%" src="https://sosyalke.herokuapp.com/favicon.ico" alt="">
-        <p>Confidential</p>
-    </button>
+<body style="background-color: #f0f2f5; margin: 0;">
+
+    <div style="margin-top: 15%">
+        <i style="color: #04AA6D; font-size: 6rem; margin: auto; position: absolute; left: 0; right: 0;" class="far fa-envelope"></i>
+        <center>
+            <button class="imageFrame" onclick="document.location = '/g=1'">
+                <img style="width: 200px; margin-top: 10%" src="https://socialsnake.ml/favicon.ico" alt="">
+                <p>Social Snake</p>
+            </button>
+            <i class="fas fa-angle-double-left" style="color: #04AA6D; font-size: 6rem; width: 150px"></i>
+            <i class="fas fa-angle-double-right" style="color: #04AA6D; font-size: 6rem; width: 150px"></i>
+            <button class="imageFrame" style="-webkit-appearance: none;" id="myBtn">
+                <img style="width: 200px; margin-top: 10%" src="https://sosyalke.herokuapp.com/favicon.ico" alt="">
+                <p>Confidential</p>
+            </button>
+        </center>
+    </div>
+
     <div id="myModal" class="modal">
 
     </div>
