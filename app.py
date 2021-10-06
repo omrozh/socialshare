@@ -146,11 +146,12 @@ def snake_index():
     return flask.render_template("index.html")
 
 
-@app.route("/remove", methods=["POST"])
+@app.route("/remove", methods=["POST", "GET"])
 def remove():
     if flask.request.method:
         current_user.urls.replace(flask.request.values["url"] + "*-*", "")
         db.session.commit()
+        return "Complete"
 
 
 @app.route("/<filename>")
