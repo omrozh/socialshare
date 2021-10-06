@@ -87,6 +87,13 @@ function mobileUse(){
     }
 }
 
+function() openModal{
+  alert("Work")
+  var modal = document.getElementById("myModal");
+  modal.innerHTML = '<div class="modal-content"> <span class="close" style="opacity: 0">&times;</span> <iframe src="https://sosyalke.herokuapp.com/mainPage/no_cat/social_snake" style="width: 100%; height: 100%;" frameborder="0"></iframe> </div>'
+  modal.style.display = "block";
+}
+
 function main(){
     getLeaderBoard()
     mobileUse()
