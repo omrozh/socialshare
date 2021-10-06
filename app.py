@@ -113,10 +113,10 @@ def viewScores():
 def home():
     urls = []
     if current_user.is_authenticated:
-        urls = current_user.urls.split("&")
+        urls = current_user.urls.split("*-*")
     if flask.request.method == "POST":
         if current_user.is_authenticated:
-            current_user.urls += flask.request.values["fav_url"] + "&"
+            current_user.urls += flask.request.values["fav_url"] + "*-*"
             db.session.commit()
         else:
             all_users = []
