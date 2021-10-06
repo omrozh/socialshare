@@ -335,7 +335,7 @@
                 {% if i != "" %}
                     <button ondblclick="removeURL('{{ i }}')" class="imageFrame" style="-webkit-appearance: none;">
 
-                        <img style="margin-top: 10%; max-width: 200px" onerror="javascript:this.src='https://place-hold.it/300x300/00ffbb/ffffff?text=' + '{{ i }}'.replace('https://', '').replace('http://', '').replace('www.', '').charAt(0).toUpperCase()  + '&fontsize=80'" src="{{ i }}/favicon.ico" alt="">
+                        <img onclick="document.location = '{{ i }}'" style="margin-top: 10%; max-width: 200px" onerror="javascript:this.src='https://place-hold.it/300x300/00ffbb/ffffff?text=' + '{{ i }}'.replace('https://', '').replace('http://', '').replace('www.', '').charAt(0).toUpperCase()  + '&fontsize=80'" src="{{ i }}/favicon.ico" alt="">
                             <p onclick="document.location = '{{ i }}'" style="margin-left: 10px; cursor: pointer">{{ i }}</p>
 
                     </button>
