@@ -255,7 +255,7 @@
             {% for i in urls %}
                 {% if i != "" %}
                     <button class="imageFrame" style="-webkit-appearance: none;" onclick="document.location = '{{ i }}'">
-                        <a href="/remove/{{ i }}" style="text-decoration: none; margin-left: 190px">X</a>
+                        <a onclick="removeURL('{{ i }}')" style="text-decoration: none; margin-left: 190px">X</a>
                         <img style="margin-top: 10%; max-width: 200px" src="{{ i }}/favicon.ico" alt="">
                             <p style="margin-left: 10px">{{ i }}</p>
                     </button>
@@ -277,6 +277,15 @@
       var modal = document.getElementById("myModal");
       modal.innerHTML = '<div class="modal-content"> <span class="close" style="opacity: 0">&times;</span> <iframe src="https://sosyalke.herokuapp.com/mainPage/no_cat/social_snake" style="width: 100%; height: 100%;" frameborder="0"></iframe> </div>'
       modal.style.display = "block";
+    }
+
+    function removeURL(url_to_remove){
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", '/remove', true);
+
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        xhr.send("url=" + url_to_remove);
     }
     </script>
 </body>
