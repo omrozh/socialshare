@@ -254,10 +254,10 @@
             </button>
             {% for i in urls %}
                 {% if i != "" %}
-                    <a onclick="removeURL('{{ i }}')" style="text-decoration: none;">X</a>
-                    <button class="imageFrame" style="-webkit-appearance: none;" onclick="document.location = '{{ i }}'">
+                    <button class="imageFrame" style="-webkit-appearance: none;">
+                    <a onclick="removeURL('{{ i }}')" style="text-decoration: none; cursor: pointer; margin-top: -50px">X</a>
                         <img style="margin-top: 10%; max-width: 200px" src="{{ i }}/favicon.ico" alt="">
-                            <p style="margin-left: 10px">{{ i }}</p>
+                            <p onclick="document.location = '{{ i }}'" style="margin-left: 10px; cursor: pointer">{{ i }}</p>
                     </button>
                 {% endif %}
             {% endfor %}
