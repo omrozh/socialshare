@@ -2,14 +2,16 @@ import flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS, cross_origin
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user
+from collections import Counter
 
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb92e5655d" \
-                                        "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
-                                        "4ichdip6ol"
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///site.db"
 
+'''"postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb92e5655d" \
+    "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
+    "4ichdip6ol"'''
 
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
@@ -138,7 +140,19 @@ def home():
                 login_user(user)
 
                 return flask.redirect("/")
-    return flask.render_template("home.html", logged_in=current_user.is_authenticated, urls=urls)
+    all_urls = []
+
+    for i in User.query.all():
+        all_urls.append(i.urls)
+
+    counter = Counter(all_urls)
+
+    final_url_list = []
+
+    for i in counter.most_common(10):
+        final_url_list.append(i[0].replace("*-*", ""))
+
+    return flask.render_template("home.html", logged_in=current_user.is_authenticated, urls=urls, url_list=final_url_list)
 
 
 @app.route("/g=1")

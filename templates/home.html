@@ -228,6 +228,11 @@
                     <br>
                     <input type="submit" class="button-17">
                 </form>
+                <br>
+                <p>Most popular sites</p>
+                {% for i in url_list %}
+                    <p>{{ i }}</p>
+                {% endfor %}
             {% else %}
                 <form method="post" enctype="multipart/form-data">
                     <input type="text" name="username" style="width: 150px" placeholder="username" class="form-control">
