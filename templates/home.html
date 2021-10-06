@@ -347,6 +347,8 @@
     </div>
     <br>
     <script>
+        document.getElementById("mainInputSearch").select();
+        document.getElementById("mainInputSearch").focus();
         document.addEventListener('keydown', function(e){
             if(e.code == "Enter"){
                 document.location = "https://www.google.com/search?query=" + document.getElementById("mainInputSearch").value.replace(" ", "+");
