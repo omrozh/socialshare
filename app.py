@@ -149,8 +149,8 @@ def home():
     final_url_list = []
 
     for i in counter.most_common(10):
-        final_url_list.append(i[0].replace("*-*", "<br>"))
-
+        final_url_list.append(i[0])
+    final_url_list = final_url_list[0].split("*-*")
     return flask.render_template("home.html", logged_in=current_user.is_authenticated, urls=urls, url_list=final_url_list)
 
 

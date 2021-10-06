@@ -231,7 +231,7 @@
                 <br>
                 <p>Most popular sites</p>
                 {% for i in url_list %}
-                    <p>{{ i }}</p>
+                    {{ i }}
                 {% endfor %}
             {% else %}
                 <form method="post" enctype="multipart/form-data">
