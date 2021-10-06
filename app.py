@@ -10,7 +10,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d
                                         "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
                                         "4ichdip6ol"
 
-#
 
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
