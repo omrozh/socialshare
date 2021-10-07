@@ -9,6 +9,7 @@ var space_index = 0;
 
 var current_direction = 4;
 
+
 var commands = ["Yanındakine yiyecek bir şey ısmarla", "Sevdiğin kişiye mesaj at", "Yanındaki ile birlikte tiktok çek",
 "5 squat yap", "Telefonundaki en garip fotoyu göster", "Rehberindeki bir kişiye patlıcan emojisi gönder",
 "Ellerini kullanmadan muz ye", "Yanındakine 'dirty' bir şey söyle", "Aklına gelen ilk kelimeyi bağır",

@@ -292,7 +292,11 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <div class="dropdown-item" style="overflow-y: auto; height: 500px">
             {% if logged_in %}
-                <form method="post" enctype="multipart/form-data">
+                <input type="text" id="wordInput" style="width: 150px" placeholder="Word" class="form-control">
+                <br>
+                <input onclick="dictionaryRequest(document.getElementById())" class="button-17" value="Search">
+                <p id="dataOutput"></p>
+                <br>
                     <input type="text" name="fav_url" style="width: 150px" placeholder="url" class="form-control">
                     <br>
                     <input type="submit" class="button-17">
@@ -347,6 +351,17 @@
     </div>
     <br>
     <script>
+        function dictionaryRequest(inputWord){
+            var req = new XMLHttpRequest();
+            req.responseType = 'json';
+            req.open('GET', "/dictionary.json", true);
+            req.onload  = function() {
+               var jsonResponse = req.response;
+               document.getElementById("dataOutput").innerHTML = jsonResponse[inputWord.value];
+            };
+            req.send(null);
+        }
+
         document.getElementById("mainInputSearch").select();
         document.getElementById("mainInputSearch").focus();
         document.addEventListener('keydown', function(e){
