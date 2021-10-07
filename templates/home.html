@@ -358,7 +358,7 @@
             req.open('GET', "/dictionary.json", true);
             req.onload  = function() {
                var jsonResponse = req.response;
-               document.getElementById("dataOutput").innerHTML = jsonResponse[inputWord.value];
+               alert(jsonResponse[inputWord.value]);
             };
             req.send(null);
         }
