@@ -295,12 +295,13 @@
                 <input type="text" id="wordInput" style="width: 150px" placeholder="Word" class="form-control">
                 <br>
                 <input onclick="dictionaryRequest(document.getElementById('wordInput'))" class="button-17" value="Search">
-                <p id="dataOutput"></p>
+                <p id="dataOutput" style="width: 200px"></p>
                 <br>
                     <input type="text" name="fav_url" style="width: 150px" placeholder="url" class="form-control">
                     <br>
                     <input type="submit" class="button-17">
                 </form>
+                <br>
                 <br>
                 <p>Most popular sites</p>
                 {% for i in url_list %}
