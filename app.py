@@ -74,7 +74,7 @@ def getDoc(identifier):
 def createDocument():
     new_document = Document(data="", title="", identifier=str(randint(99999999, 999999999)))
     db.session.add(new_document)
-    current_user.urls = f"/document/{new_document.identifier}*-*"
+    current_user.urls += f"/document/{new_document.identifier}*-*"
     db.session.commit()
 
     return flask.redirect(f"/document/{new_document.identifier}")
