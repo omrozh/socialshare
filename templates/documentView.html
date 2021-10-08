@@ -23,12 +23,22 @@
 
         }
 
+        function failSafeSaver () {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("data=" + document.getElementById("docContainer").value);
+            prev_val = document.getElementById("docContainer").value
+        }
+
         function saver () {
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
             prev_val = document.getElementById("docContainer").value
+
+            setTimeout(failSafeSaver, 20)
         }
     </script>
 
