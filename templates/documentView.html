@@ -10,12 +10,7 @@
 <body style="background-color: rgb(200, 200, 200); background-image: none">
 <textarea class="document" onkeydown="saver()" id="docContainer" cols="30" rows="10"></textarea>
 <script>
-        init_timeout = setTimeout(getter, 1000)
-
-        function resetGetter(){
-            window.clearTimeout(init_timeout);
-            setTimeout(getter, 1000)
-        }
+        setTimeout(getter, 50)
 
         function getter(){
             fetch("/getDoc/{{ doc.identifier }}")
@@ -24,7 +19,7 @@
                 }).then(function(data) {
                   document.getElementById("docContainer").value =(data);
              });
-             init_timeout = setTimeout(getter, 1000)
+             setTimeout(getter, 3000)
 
         }
 
@@ -34,8 +29,6 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
             prev_val = document.getElementById("docContainer").value
-
-            resetGetter();
         }
     </script>
 
