@@ -13,8 +13,6 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d
                                          "4ichdip6ol"
 
 
-
-
 db = SQLAlchemy(app)
 CORS(app, support_credentials=True)
 
@@ -72,9 +70,9 @@ def getDoc(identifier):
     return Document.query.filter_by(identifier=identifier).first().data
 
 
-@app.route("/createDocument/")
+@app.route("/createDocument")
 def createDocument():
-    new_document = Document(data="", title="", identifier=str(randint(99999999999, 999999999999999)))
+    new_document = Document(data="", title="", identifier=str(randint(99999999, 999999999)))
     db.session.add(new_document)
     current_user.urls = f"/document/{new_document.identifier}&"
     db.session.commit()
