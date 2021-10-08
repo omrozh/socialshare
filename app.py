@@ -3,13 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS, cross_origin
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user
 from collections import Counter
+from random import randint
 
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
 app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb92e5655d" \
-                                        "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
-                                        "4ichdip6ol"
+                                         "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
+                                         "4ichdip6ol"
+
+
 
 
 db = SQLAlchemy(app)
@@ -38,9 +41,45 @@ class Score(db.Model):
     category = db.Column(db.String)
 
 
+class Document(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    data = db.Column(db.String)
+    title = db.Column(db.String)
+    identifier = db.Column(db.String, unique=True)
+
+
 @app.before_request
 def ban():
     pass
+
+
+@app.route("/document/<identifier>")
+def documentView(identifier):
+    doc = Document.query.filter_by(identifier=identifier).first()
+    return flask.render_template("documentView.html", doc=doc)
+
+
+@app.route("/saveDoc/<identifier>", methods=["POST", "GET"])
+def saveDoc(identifier):
+    print(flask.request.values["data"])
+    Document.query.filter_by(identifier=identifier).first().data = flask.request.values["data"]
+    db.session.commit()
+    return "Done"
+
+
+@app.route("/getDoc/<identifier>")
+def getDoc(identifier):
+    return Document.query.filter_by(identifier=identifier).first().data
+
+
+@app.route("/createDocument/")
+def createDocument():
+    new_document = Document(data="", title="", identifier=str(randint(99999999999, 999999999999999)))
+    db.session.add(new_document)
+    current_user.urls = f"/document/{new_document.identifier}&"
+    db.session.commit()
+
+    return flask.redirect(f"/document/{new_document.identifier}")
 
 
 @app.route("/saveScore", methods=["POST", "GET"])

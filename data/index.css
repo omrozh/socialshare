@@ -147,3 +147,21 @@ body{
 .button-17:disabled {
   box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
 }
+
+.document{
+    border: none;
+    width: 50%;
+    height: 120vh;
+    resize: none;
+    background-color: white;
+    padding-left: 50px;
+    font-size: 1rem;
+    padding-top: 50px;
+    outline: none;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 22%;
+    box-shadow: 0px 0px 5px 5px#7a7a7a;
+}
