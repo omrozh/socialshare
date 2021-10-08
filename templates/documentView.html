@@ -8,9 +8,8 @@
     <title>Edit Docs</title>
 </head>
 <body style="background-color: rgb(200, 200, 200); background-image: none">
-<textarea class="document" id="docContainer" cols="30" rows="10"></textarea>
+<textarea class="document" onkeydown="saver()" id="docContainer" cols="30" rows="10"></textarea>
 <script>
-        setTimeout(saver, 10)
         setTimeout(getter, 2000)
         prev_val = document.getElementById("docContainer").value
 
@@ -26,17 +25,11 @@
         }
 
         function saver () {
-            if(prev_val == document.getElementById("docContainer").value)
-            {
-                console.log(prev_val);
-                return;
-            }
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
             prev_val = document.getElementById("docContainer").value
-            setTimeout(saver, 10)
         }
     </script>
 
