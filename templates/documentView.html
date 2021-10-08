@@ -9,8 +9,9 @@
 </head>
 <body style="background-color: rgb(200, 200, 200);">
 <script>
-        setTimeout(saver, 1000)
+        setTimeout(saver, 10)
         setTimeout(getter, 2000)
+        prev_val = document.getElementById("docContainer").value
 
         function getter(){
             fetch("/getDoc/{{ doc.identifier }}")
@@ -24,12 +25,16 @@
         }
 
         function saver () {
+            if(prev_val == document.getElementById("docContainer").value)
+            {
+                return;
+            }
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
-
-            setTimeout(saver, 1000)
+            prev_val = document.getElementById("docContainer").value
+            setTimeout(saver, 10)
         }
     </script>
 <textarea class="document" id="docContainer" cols="30" rows="10"></textarea>
