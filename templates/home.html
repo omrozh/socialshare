@@ -338,8 +338,11 @@
             {% for i in urls %}
                 {% if i != "" %}
                     <button ondblclick="removeURL('{{ i }}')" class="imageFrame" style="-webkit-appearance: none;">
-
-                        <img onclick="document.location = '{{ i }}'" style="margin-top: 10%; max-width: 200px; cursor: pointer" onerror="javascript:this.src='https://place-hold.it/300x300/00ffbb/ffffff?text=' + '{{ i }}'.replace('https://', '').replace('http://', '').replace('www.', '').charAt(0).toUpperCase()  + '&fontsize=80'" src="{{ i }}/favicon.ico" alt="">
+                        {% if "/document" in {{ i }} %}
+                            <iframe onclick="document.location = '{{ i }}'" style="margin-top: 10%; max-width: 200px; cursor: pointer" src="{{ i }}" alt=""></iframe>
+                        {% else %}
+                            <img onclick="document.location = '{{ i }}'" style="margin-top: 10%; max-width: 200px; cursor: pointer" onerror="javascript:this.src='https://place-hold.it/300x300/00ffbb/ffffff?text=' + '{{ i }}'.replace('https://', '').replace('http://', '').replace('www.', '').charAt(0).toUpperCase()  + '&fontsize=80'" src="{{ i }}/favicon.ico" alt="">
+                        {% endif %}
                             <p onclick="document.location = '{{ i }}'" style="margin-left: 10px; cursor: pointer">{{ i }}</p>
 
                     </button>
