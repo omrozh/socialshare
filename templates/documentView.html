@@ -8,9 +8,10 @@
     <title>Edit Docs</title>
 </head>
 <body style="background-color: rgb(200, 200, 200); background-image: none">
-<textarea class="document" onkeydown="saver()" id="docContainer" cols="30" rows="10"></textarea>
+<textarea class="document" onkeydown="clickerSave()" id="docContainer" cols="30" rows="10"></textarea>
 <script>
         setTimeout(getter, 50)
+        total_keydown = 0;
 
         function getter(){
             fetch("/getDoc/{{ doc.identifier }}")
@@ -23,12 +24,12 @@
 
         }
 
-        function failSafeSaver () {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("data=" + document.getElementById("docContainer").value);
-            prev_val = document.getElementById("docContainer").value
+        clickerSave(){
+            total_keydown += 1
+            if(total_keydown > 3){
+                saver()
+                total_keydown = 0
+            }
         }
 
         function saver () {
