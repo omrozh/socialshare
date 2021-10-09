@@ -14,10 +14,15 @@
         <option value="True">On</option>
         <option value="False">Off</option>
     </select>
+    <p style="position: absolute; top: 75px; left: -5px; display: none;" id="saveInfo">Saved</p>
     <textarea class="document" onkeydown="autoSaver()" id="docContainer" cols="30" rows="10"></textarea>
 
 <script>
         setTimeout(getter, 50)
+
+        function removeSave(){
+            document.getElementById("saveInfo").style.display = "none";
+        }
 
         function getter(){
             if(document.getElementById("auto-save").value == "False"){
@@ -50,6 +55,8 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
 
+            document.getElementById("saveInfo").style.display = "block";
+            setTimeout(removeSave, 1000)
         }
     </script>
 
