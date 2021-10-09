@@ -43,6 +43,7 @@
                 return;
             }
             var xhr = new XMLHttpRequest();
+            xhr.timeout = 2000;
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
