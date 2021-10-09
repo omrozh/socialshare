@@ -20,6 +20,10 @@
         setTimeout(getter, 50)
 
         function getter(){
+            if(document.getElementById("auto-save").value == "False"){
+                setTimeout(getter, 3000)
+                return;
+            }
             fetch("/getDoc/{{ doc.identifier }}")
                 .then(function(body){
                   return body.text();
