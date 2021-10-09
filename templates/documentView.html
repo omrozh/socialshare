@@ -8,7 +8,15 @@
     <title>Edit Docs</title>
 </head>
 <body style="background-color: rgb(200, 200, 200); background-image: none">
-<textarea class="document" onkeydown="saver()" id="docContainer" cols="30" rows="10"></textarea>
+    <button class="button-17" style="position: absolute; top: 15px; left: 50px" onclick="saver()">Save</button>
+    <select id="auto-save" class="button-17" style="position: absolute; top: 15px; left: 150px">
+        <option value="True" disabled selected>Auto Save(On)</option>
+        <option value="True">On</option>
+        <option value="False">Off</option>
+
+    </select>
+    <textarea class="document" onkeydown="autoSaver()" id="docContainer" cols="30" rows="10"></textarea>
+
 <script>
         setTimeout(getter, 50)
 
@@ -20,6 +28,16 @@
                   document.getElementById("docContainer").value =(data);
              });
              setTimeout(getter, 3000)
+        }
+
+        function autoSaver () {
+            if(document.getElementById("auto-save").value == "False"){
+                return;
+            }
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.send("data=" + document.getElementById("docContainer").value);
 
         }
 
@@ -28,7 +46,7 @@
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
             xhr.send("data=" + document.getElementById("docContainer").value);
-            prev_val = document.getElementById("docContainer").value
+
         }
     </script>
 
