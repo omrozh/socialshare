@@ -12,7 +12,6 @@
     <div style="background-color: white; width: 100%; height: 75px; margin: 0; padding: 0; box-shadow: 0 4px 2px -2px rgb(200, 200, 200);">
         <img src="/docslogo.png" style="width: 50px; margin-top: 1%; margin-left: 5%" alt="">
         <button class="button-17" style="position: absolute; top: 15px; left: 150px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="saver()">Save</button>
-        <span id="wordCount" style="position: absolute; top: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
         <select id="auto-save" class="button-17" style="position: absolute; top: 15px; left: 250px; background: transparent; -webkit-appearance: none; border-radius: 5px; border: none; box-shadow: none;">
             <option value="True" disabled selected>Auto Save(On)</option>
             <option value="True">On</option>
@@ -22,7 +21,7 @@
 
     <p style="position: absolute; top: 75px; left: -5px; display: none; margin-left: 5%; color: gray; width: 90%; font-family: Helvetica" id="saveInfo">Saved</p>
     <textarea class="document" style="font-family: Open Sans" onkeydown="autoSaver()" id="docContainer" cols="30" rows="10"></textarea>
-
+    <span id="wordCount" style="position: absolute; bottom: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
 <script>
         setTimeout(getter, 50)
         setTimeout(setWord, 50)
