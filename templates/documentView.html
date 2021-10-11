@@ -42,11 +42,18 @@
         setTimeout(getter, 50)
         setTimeout(setWord, 50)
 
+        var modal = document.getElementById("myModal");
 
 
         function openModal(){
-          var modal = document.getElementById("myModal");
+
           modal.style.display = "block";
+        }
+
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
         }
 
         function download(filename, text) {
