@@ -45,7 +45,7 @@
         function setWord(){
 
 
-            if(document.getElementById("docContainer").value.split(" ").length == 1){
+            if(document.getElementById("docContainer").value.split(" ")[0] == ""){
                 document.getElementById("wordCount").innerHTML = "Word Count: 0"
             }
             else{
