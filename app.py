@@ -60,7 +60,7 @@ def documentView(identifier):
         if len(i.title) > 3:
             shared_docs.append(i.title)
             shared_docs.append(i.data.split("\n")[0])
-    return flask.render_template("documentView.html", doc=doc, shared_docs=shared_docs)
+    return flask.render_template("documentView.html", doc=doc, shared_docs=shared_docs, shared_docs_len=len(shared_docs))
 
 
 @app.route("/saveDoc/<identifier>", methods=["POST", "GET"])
