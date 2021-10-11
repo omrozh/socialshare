@@ -65,6 +65,19 @@ def saveDoc(identifier):
     return "Done"
 
 
+@app.route("/document/unauth/<title_id>")
+def viewSharedDoc(title_id):
+    document = Document.query.filter_by(title=title_id).first()
+    return flask.render_template("view_doc.html", document=document)
+
+
+@app.route("/share/doc/<doc_id>")
+def shareDoc(doc_id):
+    Document.query.filter_by(indentifier=doc_id).first().title = randint(99999999999999, 99999999999999999)
+    db.session.commit()
+    return flask.redirect("/document/" + doc_id)
+
+
 @app.route("/getDoc/<identifier>")
 def getDoc(identifier):
     return Document.query.filter_by(identifier=identifier).first().data
@@ -72,7 +85,7 @@ def getDoc(identifier):
 
 @app.route("/createDocument")
 def createDocument():
-    new_document = Document(data="", title="", identifier=str(randint(99999999, 999999999)))
+    new_document = Document(data="", identifier=str(randint(99999999, 999999999)))
     db.session.add(new_document)
     current_user.urls += f"/document/{new_document.identifier}*-*"
     db.session.commit()
