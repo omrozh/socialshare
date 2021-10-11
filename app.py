@@ -4,6 +4,8 @@ from flask_cors import CORS, cross_origin
 from flask_login import LoginManager, UserMixin, login_user, login_required, current_user
 from collections import Counter
 from random import randint
+from flask_migrate import Migrate
+
 
 app = flask.Flask(__name__)
 
@@ -14,6 +16,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d
 
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
 CORS(app, support_credentials=True)
 
 login_manager = LoginManager(app)
