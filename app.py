@@ -54,7 +54,13 @@ def ban():
 @app.route("/document/<identifier>")
 def documentView(identifier):
     doc = Document.query.filter_by(identifier=identifier).first()
-    return flask.render_template("documentView.html", doc=doc)
+    shared_docs = []
+
+    for i in Document.query.all():
+        if len(i.title) > 3:
+            shared_docs.append(i.title)
+            shared_docs.append(i.data.split("\n")[0])
+    return flask.render_template("documentView.html", doc=doc, shared_docs=shared_docs)
 
 
 @app.route("/saveDoc/<identifier>", methods=["POST", "GET"])
