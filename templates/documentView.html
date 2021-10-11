@@ -48,8 +48,8 @@
             data_unprocessed = document.getElementById("docContainer").value
             var data = data_unprocessed.split()
             for(i = 0; i < data.length; i++){
-                alert(data[i])
                 if(data[i].includes("clc") && data[i].includes(")")){
+                    console.log(data[i])
                     output = eval(data[i].replace("clc(", "").replace(")", ""))
                     document.getElementById("docContainer").value.replace(data[i], output)
                 }
