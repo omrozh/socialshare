@@ -26,10 +26,11 @@
     <textarea class="document" style="font-family: Open Sans" onkeydown="autoSaver()" id="docContainer" cols="30" rows="10"></textarea>
     <span id="wordCount" style="position: fixed; bottom: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
     <div id="myModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content" style="font-family: Open Sans; ">
+            <h1 style="color: gray">Latest Docs</h1>
             {% for i in range(shared_docs_len) %}
                 {% if i % 2 == 0 %}
-                    <a href="/document/unauth/{{ shared_docs[i] }}" style="text-decoration: none; color: gray; font-size: 24">{{ shared_docs[i + 1] }}</a>
+                    <a href="/document/unauth/{{ shared_docs[i] }}" style="text-decoration: none; color: gray; font-size: 24px">{{ shared_docs[i + 1] }}</a>
                     <br>
                 {% endif %}
             {% endfor %}
