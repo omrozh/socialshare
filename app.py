@@ -68,6 +68,7 @@ def saveDoc(identifier):
 @app.route("/document/unauth/<title_id>")
 def viewSharedDoc(title_id):
     document = Document.query.filter_by(title=title_id).first()
+    print(document.title)
     return flask.render_template("view_doc.html", document=document)
 
 
