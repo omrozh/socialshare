@@ -73,7 +73,7 @@ def viewSharedDoc(title_id):
 
 @app.route("/share/doc/<doc_id>")
 def shareDoc(doc_id):
-    Document.query.filter_by(indentifier=doc_id).first().title = randint(99999999999999, 99999999999999999)
+    Document.query.filter_by(identifier=doc_id).first().title = randint(99999999999999, 99999999999999999)
     db.session.commit()
     return flask.redirect("/document/" + doc_id)
 
