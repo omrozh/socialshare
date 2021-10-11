@@ -29,7 +29,8 @@
         <div class="modal-content">
             {% for i in range(shared_docs_len) %}
                 {% if i % 2 == 0 %}
-                    <a href="/document/unauth/{{ shared_docs[i] }}">{{ shared_docs[i + 1] }}</a>
+                    <a href="/document/unauth/{{ shared_docs[i] }}" style="text-decoration: none; color: gray; font-size: 24">{{ shared_docs[i + 1] }}</a>
+                    <br>
                 {% endif %}
             {% endfor %}
         </div>
