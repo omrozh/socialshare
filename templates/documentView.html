@@ -22,7 +22,7 @@
     <div style="background-color: white; width: 100%; height: 75px; margin: 0; padding: 0; box-shadow: 0 4px 2px -2px rgb(200, 200, 200);">
         <img onclick="openModal()" src="/docslogo.png" style="width: 50px; margin-top: 1%; margin-left: 5%" alt="">
         <button class="button-17" style="position: absolute; top: 15px; left: 150px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="saver()">Save</button>
-        <button class="button-17" style="position: absolute; top: 15px; left: 400px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="download('socialdocs.txt', document.getElementById('docContainer').innerHTML)">Download</button>
+        <button class="button-17" style="position: absolute; top: 15px; left: 400px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="download('socialdocs.html', document.getElementById('docContainer').innerHTML)">Download</button>
         <input class="addElement" style="position: absolute; top: 27px; left: 600px; border-radius: 5px; border: none; box-shadow: none; background: none;" type="color" onchange="changeColor(this.value)">
         <select id="auto-save" class="button-17" style="position: absolute; top: 15px; left: 250px; background: transparent; -webkit-appearance: none; border-radius: 5px; border: none; box-shadow: none;">
             <option value="True" disabled selected>Auto Save(On)</option>
@@ -111,7 +111,7 @@
 
         function download(filename, text) {
           var element = document.createElement('a');
-          element.setAttribute('href', 'data:text/html,' + encodeURIComponent(text));
+          element.setAttribute('href', 'data:text/html;charset=utf-8,,' + encodeURIComponent(text));
           element.setAttribute('download', filename);
 
           element.style.display = 'none';
