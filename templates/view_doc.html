@@ -143,17 +143,7 @@
         }
 
         function getter(){
-            if(document.getElementById("auto-save").value == "False"){
-                setTimeout(getter, 3000)
-                return;
-            }
-            fetch("/getDoc/{{ doc.identifier }}")
-                .then(function(body){
-                  return body.text();
-                }).then(function(data) {
-                  document.getElementById("docContainer").innerHTML = (data).replaceAll("#space#", "&nbsp;");
-             });
-             setTimeout(getter, 3000)
+            document.getElementById("docContainer").innerHTML = ({{ document.data }}).replaceAll("#space#", "&nbsp;");
         }
 
     </script>
