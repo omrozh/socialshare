@@ -10,9 +10,9 @@ from flask_migrate import Migrate
 app = flask.Flask(__name__)
 
 app.config["SECRET_KEY"] = "InfinityCorporation"
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://qftmofzjbfryth:cf04f93c34d0c36a68c991637ef24f0247bc3cb92e5655d" \
-                                         "863421712b47cd0c3@ec2-54-195-246-55.eu-west-1.compute.amazonaws.com:5432/d3hk" \
-                                         "4ichdip6ol"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://vjswycvguwedsy:d632c31e978d49647d5b8f46c20fa57ec654563365f38a56" \
+                                        "b02698d792a9d94f@ec2-52-209-171-51.eu-west-1.compute.amazonaws.com:5432/d1r" \
+                                        "aou42h34fdu"
 
 
 db = SQLAlchemy(app)
