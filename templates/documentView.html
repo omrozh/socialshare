@@ -171,7 +171,7 @@
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("data=" + document.getElementById("docContainer").innerHTML);
+            xhr.send("data=" + document.getElementById("docContainer").innerHTML.replace("&nbsp;", "#space#").replace("nbsp;", "#space#"));
 
             document.getElementById("saveInfo").style.display = "block";
             setTimeout(removeSave, 1000)
