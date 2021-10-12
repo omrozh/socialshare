@@ -34,19 +34,7 @@
     <p style="position: absolute; top: 75px; left: -5px; display: none; margin-left: 5%; color: gray; width: 90%; font-family: Helvetica" id="saveInfo">Saved</p>
     <div class="document" style="font-family: Open Sans; overflow-y: auto" onkeydown="autoSaver()" id="docContainer" contenteditable="true"></div>
     <span id="wordCount" style="position: fixed; bottom: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
-    <div id="myModal" class="modal">
-        <div class="modal-content" style="font-family: Open Sans; ">
-            <h1 style="color: gray">Latest Shared Docs</h1>
-            {% for i in range(shared_docs_len) %}
-                {% if i % 2 == 0 %}
-                    <a href="/document/unauth/{{ shared_docs[i] }}" style="text-decoration: none; color: gray; font-size: 24px">{{ shared_docs[i + 1] }}</a>
-                    <br>
-                    <hr>
-                    <br>
-                {% endif %}
-            {% endfor %}
-        </div>
-    </div>
+
     <menu id="ctxMenu">
         <menu  title="">
             <button onclick="insertImage()" style="background: none; border: none;">Insert URL as Image</button>
@@ -76,7 +64,7 @@
         setTimeout(getter, 50)
         setTimeout(setWord, 50)
 
-        var modal = document.getElementById("myModal");
+
 
         function changeColor(colorInp){
             document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<span style='color: mainColor'>".replace("mainColor", colorInp) + window.getSelection().toString() + "</span>")
@@ -100,18 +88,6 @@
                     document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(data[i], output)
                 }
             }
-        }
-
-
-        function openModal(){
-
-          modal.style.display = "block";
-        }
-
-        window.onclick = function(event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
-          }
         }
 
         function download(filename, text) {
