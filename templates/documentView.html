@@ -44,6 +44,10 @@
 
         var modal = document.getElementById("myModal");
 
+        var changeColor(){
+            document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<span style='color: green'>" + window.getSelection().toString() + "</span>")
+        }
+
         function checkEquation(){
             data_unprocessed = document.getElementById("docContainer").innerHTML
             var data = data_unprocessed.split(" ")
@@ -116,6 +120,7 @@
 
         function autoSaver () {
             checkEquation()
+
             var el = document.getElementById('docContainer');
             var selection = window.getSelection();
             var range = document.createRange();
