@@ -23,8 +23,42 @@
     <p style="position: absolute; top: 75px; left: -5px; display: none; margin-left: 5%; color: gray; width: 90%; font-family: Helvetica" id="saveInfo">Saved</p>
     <textarea class="document" style="font-family: Open Sans" id="docContainer" cols="30" rows="10">{{ document.data }}</textarea>
     <span id="wordCount" style="position: fixed; bottom: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
+
+    <menu id="ctxMenu">
+        <menu  title="">
+            <button onclick="insertImage()" style="background: none; border: none;">Insert URL as Image</button>
+        </menu>
+        <menu  title="">
+            <button onclick="searchText()" style="background: none; border: none;">Search</button>
+        </menu>
+    </menu>
+
+    <script>
+        var notepad = document.getElementById("docContainer");
+        notepad.addEventListener("contextmenu",function(event){
+            event.preventDefault();
+            var ctxMenu = document.getElementById("ctxMenu");
+            ctxMenu.style.display = "block";
+            ctxMenu.style.left = (event.pageX - 10)+"px";
+            ctxMenu.style.top = (event.pageY - 10)+"px";
+        },false);
+        notepad.addEventListener("click",function(event){
+            var ctxMenu = document.getElementById("ctxMenu");
+            ctxMenu.style.display = "";
+            ctxMenu.style.left = "";
+            ctxMenu.style.top = "";
+        },false);
+    </script>
 <script>
         setTimeout(setWord, 50)
+
+        function searchText(){
+            window.open("https://www.google.com/search?query=" + window.getSelection().toString())
+        }
+
+        function insertImage(){
+            document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<img src='mainColor' style='max-width: 250px'>".replace("mainColor", window.getSelection().toString()))
+        }
 
         function setWord(){
 

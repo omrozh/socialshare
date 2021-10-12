@@ -53,6 +53,9 @@
         <menu  title="">
             <button onclick="insertImage()" style="background: none; border: none;">Insert URL as Image</button>
         </menu>
+        <menu  title="">
+            <button onclick="searchText()" style="background: none; border: none;">Search</button>
+        </menu>
     </menu>
     <script>
         var notepad = document.getElementById("docContainer");
@@ -79,6 +82,10 @@
 
         function changeColor(colorInp){
             document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<span style='color: mainColor'>".replace("mainColor", colorInp) + window.getSelection().toString() + "</span>")
+        }
+
+        function searchText(){
+            window.open("https://www.google.com/search?query=" + window.getSelection().toString())
         }
 
         function insertImage(){
