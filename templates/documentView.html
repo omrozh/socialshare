@@ -61,7 +61,7 @@
 
         function checkEquation(){
             data_unprocessed = document.getElementById("docContainer").innerHTML
-            var data = data_unprocessed.split(" ")
+            var data = data_unprocessed.split("&nbsp;")
             for(i = 0; i < data.length; i++){
                 if(data[i].includes("clc") && data[i].includes(")")){
                     console.log(data[i])
@@ -96,16 +96,14 @@
           document.body.removeChild(element);
         }
 
-
-
         function setWord(){
 
 
-            if(document.getElementById("docContainer").innerHTML.split(" ")[0] == ""){
+            if(document.getElementById("docContainer").innerHTML.split("&nbsp;")[0] == ""){
                 document.getElementById("wordCount").innerHTML = "Word Count: 0"
             }
             else{
-                document.getElementById("wordCount").innerHTML = "Word Count: " + document.getElementById("docContainer").innerHTML.split(" ").length;
+                document.getElementById("wordCount").innerHTML = "Word Count: " + document.getElementById("docContainer").innerHTML.split("&nbsp;").length;
             }
 
             setTimeout(setWord, 50)
