@@ -117,7 +117,7 @@
         }
 
         function getter(){
-            fetch("/getDocUnath/{{ doc.title }}")
+            fetch("/getDocUnath/{{ document.title }}")
                 .then(function(body){
                   return body.text();
                 }).then(function(data) {
