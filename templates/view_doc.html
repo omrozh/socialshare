@@ -117,7 +117,7 @@
         }
 
         function getter(){
-            fetch("/getDocUnath/{{ document.title }}")
+            fetch("/getDocUnauth/{{ document.title }}")
                 .then(function(body){
                   return body.text();
                 }).then(function(data) {
