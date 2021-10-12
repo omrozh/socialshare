@@ -95,7 +95,7 @@ def getDoc(identifier):
 
 
 @app.route("/getDocUnauth/<ua_id>")
-def getDoc(ua_id):
+def getDocUnauth(ua_id):
     return Document.query.filter_by(title=ua_id).first().data
 
 
