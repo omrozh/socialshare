@@ -44,8 +44,8 @@
 
         var modal = document.getElementById("myModal");
 
-        function changeColor(){
-            document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<span style='color: green'>" + window.getSelection().toString() + "</span>")
+        function changeColor(color){
+            document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(window.getSelection().toString(), "<span style='color:" + color + ">" + window.getSelection().toString() + "</span>")
         }
 
         function checkEquation(){
