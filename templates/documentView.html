@@ -148,7 +148,7 @@
                 .then(function(body){
                   return body.text();
                 }).then(function(data) {
-                  document.getElementById("docContainer").innerHTML =(data);
+                  document.getElementById("docContainer").innerHTML = (data).replace("#space#", "&nbsp;");
              });
              setTimeout(getter, 3000)
         }
@@ -163,7 +163,7 @@
             xhr.timeout = 2000;
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("data=" + document.getElementById("docContainer").innerHTML);
+            xhr.send("data=" + document.getElementById("docContainer").innerHTML.replace("nbsp;", "#space#");
 
         }
 
