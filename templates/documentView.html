@@ -132,15 +132,6 @@
         function autoSaver () {
             checkEquation()
 
-            var el = document.getElementById('docContainer');
-            var selection = window.getSelection();
-            var range = document.createRange();
-            selection.removeAllRanges();
-            range.selectNodeContents(el);
-            range.collapse(false);
-            selection.addRange(range);
-            el.focus();
-
             if(document.getElementById("auto-save").value == "False"){
                 return;
             }
