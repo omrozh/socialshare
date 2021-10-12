@@ -117,7 +117,12 @@
         }
 
         function getter(){
-            document.getElementById("docContainer").innerHTML = ("{{ document.data }}").replaceAll("#space#", "&nbsp;");
+            fetch("/getDocUnath/{{ doc.title }}")
+                .then(function(body){
+                  return body.text();
+                }).then(function(data) {
+                  document.getElementById("docContainer").innerHTML = (data).replaceAll("#space#", "&nbsp;");
+             });
         }
     </script>
 

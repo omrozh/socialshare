@@ -94,6 +94,11 @@ def getDoc(identifier):
     return Document.query.filter_by(identifier=identifier).first().data
 
 
+@app.route("/getDocUnauth/<ua_id>")
+def getDoc(ua_id):
+    return Document.query.filter_by(title=ua_id).first().data
+
+
 @app.route("/createDocument")
 def createDocument():
     new_document = Document(data="", title="", identifier=str(randint(99999999, 999999999)))
