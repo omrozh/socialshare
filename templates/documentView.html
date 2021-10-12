@@ -12,7 +12,7 @@
     <div style="background-color: white; width: 100%; height: 75px; margin: 0; padding: 0; box-shadow: 0 4px 2px -2px rgb(200, 200, 200);">
         <img onclick="openModal()" src="/docslogo.png" style="width: 50px; margin-top: 1%; margin-left: 5%" alt="">
         <button class="button-17" style="position: absolute; top: 15px; left: 150px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="saver()">Save</button>
-        <button class="button-17" style="position: absolute; top: 15px; left: 400px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="download('socialdocs.txt', document.getElementById('docContainer').value)">Download</button>
+        <button class="button-17" style="position: absolute; top: 15px; left: 400px; border-radius: 5px; border: none; box-shadow: none; background: none;" onclick="download('socialdocs.txt', document.getElementById('docContainer').innerHTML)">Download</button>
         <select id="auto-save" class="button-17" style="position: absolute; top: 15px; left: 250px; background: transparent; -webkit-appearance: none; border-radius: 5px; border: none; box-shadow: none;">
             <option value="True" disabled selected>Auto Save(On)</option>
             <option value="True">On</option>
@@ -23,7 +23,7 @@
     </div>
 
     <p style="position: absolute; top: 75px; left: -5px; display: none; margin-left: 5%; color: gray; width: 90%; font-family: Helvetica" id="saveInfo">Saved</p>
-    <textarea class="document" style="font-family: Open Sans" onkeydown="autoSaver()" id="docContainer" cols="30" rows="10"></textarea>
+    <div class="document" style="font-family: Open Sans" onkeydown="autoSaver()" id="docContainer" contenteditable="true"></div>
     <span id="wordCount" style="position: fixed; bottom: 30px; right: 100px; border-radius: 5px; border: none; box-shadow: none; background: none; font-family: Open Sans;">Word Count</span>
     <div id="myModal" class="modal">
         <div class="modal-content" style="font-family: Open Sans; ">
@@ -45,13 +45,13 @@
         var modal = document.getElementById("myModal");
 
         function checkEquation(){
-            data_unprocessed = document.getElementById("docContainer").value
+            data_unprocessed = document.getElementById("docContainer").innerHTML
             var data = data_unprocessed.split(" ")
             for(i = 0; i < data.length; i++){
                 if(data[i].includes("clc") && data[i].includes(")")){
                     console.log(data[i])
                     output = eval(data[i].replace("clc(", "").replace(")", ""))
-                    document.getElementById("docContainer").value = document.getElementById("docContainer").value.replace(data[i], output)
+                    document.getElementById("docContainer").innerHTML = document.getElementById("docContainer").innerHTML.replace(data[i], output)
                 }
             }
         }
@@ -86,11 +86,11 @@
         function setWord(){
 
 
-            if(document.getElementById("docContainer").value.split(" ")[0] == ""){
+            if(document.getElementById("docContainer").innerHTML.split(" ")[0] == ""){
                 document.getElementById("wordCount").innerHTML = "Word Count: 0"
             }
             else{
-                document.getElementById("wordCount").innerHTML = "Word Count: " + document.getElementById("docContainer").value.split(" ").length;
+                document.getElementById("wordCount").innerHTML = "Word Count: " + document.getElementById("docContainer").innerHTML.split(" ").length;
             }
 
             setTimeout(setWord, 50)
@@ -109,7 +109,7 @@
                 .then(function(body){
                   return body.text();
                 }).then(function(data) {
-                  document.getElementById("docContainer").value =(data);
+                  document.getElementById("docContainer").innerHTML =(data);
              });
              setTimeout(getter, 3000)
         }
@@ -123,7 +123,7 @@
             xhr.timeout = 2000;
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("data=" + document.getElementById("docContainer").value);
+            xhr.send("data=" + document.getElementById("docContainer").innerHTML);
 
         }
 
@@ -131,7 +131,7 @@
             var xhr = new XMLHttpRequest();
             xhr.open("POST", '/saveDoc/{{ doc.identifier }}', true);
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.send("data=" + document.getElementById("docContainer").value);
+            xhr.send("data=" + document.getElementById("docContainer").innerHTML);
 
             document.getElementById("saveInfo").style.display = "block";
             setTimeout(removeSave, 1000)
