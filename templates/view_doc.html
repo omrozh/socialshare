@@ -117,7 +117,7 @@
         }
 
         function getter(){
-            document.getElementById("docContainer").innerHTML = ({{ document.data }}).replaceAll("#space#", "&nbsp;");
+            document.getElementById("docContainer").innerHTML = ("{{ document.data }}").replaceAll("#space#", "&nbsp;");
         }
     </script>
 
